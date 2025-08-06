@@ -17,11 +17,20 @@
 // Explanation: counter() initially returns -2. Then increases after each sebsequent call.
 
 
-const createCounter = function (n) {
+function createCounter(start) {
+    let count = start
     return function () {
-        return n++;
+        return count++;
     }
 }
+
+const counter = createCounter(91)
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
 
 /** 
  * const counter = createCounter(10)
