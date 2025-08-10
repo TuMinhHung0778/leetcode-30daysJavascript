@@ -108,18 +108,32 @@
 
 // 2626. Array Reduce Transformation
 /**
- * @param {number[]} nums
- * @param {Function} fn
- * @param {number} init
- * @return {number}
+ * @param {number[]} nums - Mảng số nguyên đầu vào
+ * @param {Function} fn - Hàm giảm: fn(accum, curr) => số
+ * @param {number} init - Giá trị khởi tạo
+ * @return {number} - Kết quả cuối cùng sau khi “giảm” hết mảng
  */
 let reduce = function (nums, fn, init) {
-
+    let val = init;
+    for (let i = 0; i < nums.length; i++) {
+        val = fn(val, nums[i]);
+    }
+    return val;
 };
 
 function sum(accum, curr) {
-    let init = 0 
     return accum + curr;
 }
+console.log(reduce([1, 2, 3, 4], sum, 0));
 
+function sumSquares(accum, curr) {
+    return accum + curr * curr;
+}
+console.log(reduce([1, 2, 3, 4], sumSquares, 100));
 
+function any(accum, curr) {
+    return 0;
+}
+console.log(reduce([], any, 25));
+
+// 2703. Return Length of Arguments Passed
