@@ -1,4 +1,4 @@
-// leetcode
+// method javascript
 
 // Map giống như 1 cái hộp đựng đồ
 const myMap = new Map();
@@ -21,3 +21,4 @@ console.log(myMap.has('name'));
 console.log(myMap.has('tuoi'));
 console.log(myMap.has(objkey));
 console.log(myMap.has('gia tri sai'));
+console.log(myMap);
